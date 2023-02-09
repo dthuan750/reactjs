@@ -28,6 +28,14 @@ const App = () => {
       .catch(err => setError(err))
   }
 
+  useEffect(() => {
+    if(!text.trim()) return;
+    const debounce = setTimeout(() => {
+      dictionaryApi(text)
+    }, 1000)
+    return () => clearTimeout(debounce)
+  }, [text])
+
   const startSpeech = (text) => {
     const utterance = new SpeechSynthesisUtterance(text)
     const voice = voices.find(voice => voice.name === voiceSelected)
