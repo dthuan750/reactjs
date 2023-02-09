@@ -13,15 +13,15 @@ const Result = ({word, phonetics, meanings, setText}) => {
             </li>
 
             {
-                meanings.map((meaning, index) => {
+                meanings.map((meaning, index) => (
                     <li className="contain">
                         <h3>noun</h3>
                         <div className='details meaning'>
                             <h3>Meaning</h3> 
                             {
-                                meaning.definitions.map((definition, index) => {
+                                meaning.definitions.map((definition, index) => (
                                     <p key={index}>- {definition.definition}</p>
-                                })
+                                ))
                             }
                         </div>
 
@@ -32,7 +32,7 @@ const Result = ({word, phonetics, meanings, setText}) => {
                             <span>greeting, </span>
                         </div>
                     </li>
-                })
+                ))
             }
 
         </ul>
