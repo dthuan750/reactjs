@@ -28,6 +28,14 @@ const App = () => {
       .catch(err => setError(err))
   }
 
+  const reset = () => {
+    setIsSpeaking("")
+    setError("")
+    setMeanings([])
+    setPhonetics([])
+    setWord("")
+  }
+
   useEffect(() => {
     if(!text.trim()) return;
     const debounce = setTimeout(() => {
