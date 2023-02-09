@@ -85,11 +85,14 @@ const App = () => {
           </div>
         </div>
       </form>
-      <Result 
-      word={word}
-      phonetics={phonetics}
-      meanings={meanings}
-      setText={setText} />
+      {
+        (text.trim() !== "" && !error) &&
+        <Result 
+        word={word}
+        phonetics={phonetics}
+        meanings={meanings}
+        setText={setText} />
+      }
     </div>
   )
 }

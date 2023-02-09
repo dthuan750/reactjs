@@ -24,13 +24,20 @@ const Result = ({word, phonetics, meanings, setText}) => {
                                 ))
                             }
                         </div>
-
-                        <div className='details synonyms'>
+                        {
+                            meaning.synonyms.length !== 0 &&
+                            <div className='details synonyms'>
                             <h3>Synonyms</h3>
-                            <span>greeting, </span>
-                            <span>greeting, </span>
-                            <span>greeting, </span>
+                            {
+                                meaning.synonyms.map((synonym, index) => (
+                                    <span key={index} onClick={() => setText(synonym)}>
+                                        {`${synonym}, `}
+                                    </span>
+                                ))
+                            }
                         </div>
+                        }
+                        
                     </li>
                 ))
             }
